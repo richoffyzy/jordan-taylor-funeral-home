@@ -1,0 +1,180 @@
+# GitHub Setup Instructions
+
+Follow these steps to upload your Jordan & Taylor Funeral Home website to GitHub.
+
+## Step 1: Create a GitHub Account (if you don't have one)
+1. Go to https://github.com
+2. Click "Sign up"
+3. Follow the registration process
+
+## Step 2: Create a New Repository
+
+1. Click the "+" icon in the top right corner
+2. Select "New repository"
+3. Fill in the details:
+   - **Repository name:** `jordan-taylor-funeral-home` (or your preferred name)
+   - **Description:** "Professional website for Jordan & Taylor Funeral and Cremation"
+   - **Visibility:** Choose Public or Private
+   - **DO NOT** initialize with README (we already have one)
+4. Click "Create repository"
+
+## Step 3: Upload Your Files
+
+### Option A: Using GitHub Web Interface (Easiest)
+
+1. On your new repository page, click "uploading an existing file"
+2. Drag and drop these files from the `jordan-taylor-funeral-home` folder:
+   - `index.html`
+   - `mobile.html`
+   - `README.md`
+   - `.gitignore`
+3. Add a commit message: "Initial commit - Jordan & Taylor website"
+4. Click "Commit changes"
+
+### Option B: Using Git Command Line
+
+```bash
+# Navigate to your project folder
+cd jordan-taylor-funeral-home
+
+# Initialize git repository
+git init
+
+# Add all files
+git add .
+
+# Commit the files
+git commit -m "Initial commit - Jordan & Taylor website"
+
+# Add your GitHub repository as remote
+git remote add origin https://github.com/YOUR-USERNAME/jordan-taylor-funeral-home.git
+
+# Push to GitHub
+git branch -M main
+git push -u origin main
+```
+
+## Step 4: Enable GitHub Pages (Free Hosting)
+
+1. Go to your repository on GitHub
+2. Click "Settings" tab
+3. Scroll down to "Pages" in the left sidebar
+4. Under "Source", select:
+   - Branch: `main`
+   - Folder: `/ (root)`
+5. Click "Save"
+6. Wait a few minutes for deployment
+7. Your site will be live at: `https://YOUR-USERNAME.github.io/jordan-taylor-funeral-home/`
+
+## Step 5: Custom Domain (Optional)
+
+If you want to use your own domain (e.g., www.jordantaylorfuneral.com):
+
+1. In your repository, create a file named `CNAME` (no extension)
+2. Add your domain name inside: `www.jordantaylorfuneral.com`
+3. Commit the file
+4. Go to your domain registrar (GoDaddy, Namecheap, etc.)
+5. Add DNS records:
+   - Type: `A` → Points to GitHub Pages IPs:
+     - `185.199.108.153`
+     - `185.199.109.153`
+     - `185.199.110.153`
+     - `185.199.111.153`
+   - Type: `CNAME` → Points to: `YOUR-USERNAME.github.io`
+6. Wait for DNS propagation (can take 24-48 hours)
+
+## Project Structure
+
+```
+jordan-taylor-funeral-home/
+├── index.html          # Main website (desktop/responsive)
+├── mobile.html         # Mobile-optimized version
+├── README.md          # Project documentation
+├── .gitignore         # Git ignore rules
+└── SETUP.md          # This file
+```
+
+## Updating Your Website
+
+After making changes to your files:
+
+### Using GitHub Web Interface:
+1. Go to your repository
+2. Click on the file you want to edit
+3. Click the pencil icon (Edit)
+4. Make your changes
+5. Scroll down and click "Commit changes"
+
+### Using Git Command Line:
+```bash
+# Make your changes to the files
+
+# Stage the changes
+git add .
+
+# Commit with a message
+git commit -m "Updated obituaries section"
+
+# Push to GitHub
+git push
+```
+
+## Common Tasks
+
+### Adding New Obituaries
+1. Open `index.html`
+2. Find the obituaries section
+3. Copy an existing obituary card
+4. Update the name, date, and data attributes
+5. Commit and push changes
+
+### Updating Contact Information
+Update in these sections:
+- Top bar (line ~1580)
+- Hero contact section (line ~1620)
+- Footer (line ~1850)
+
+### Changing Colors
+Update CSS variables at the top of the file:
+```css
+:root {
+    --primary-navy: #2c4a5c;
+    --accent-gold: #c9b896;
+    --cream: #f5f2ed;
+}
+```
+
+## Troubleshooting
+
+**Problem:** GitHub Pages shows 404 error
+- **Solution:** Make sure the file is named `index.html` exactly
+- Wait 5-10 minutes after enabling GitHub Pages
+
+**Problem:** Changes not showing on live site
+- **Solution:** Clear your browser cache (Ctrl+F5 or Cmd+Shift+R)
+- GitHub Pages can take a few minutes to update
+
+**Problem:** Git push asks for username/password
+- **Solution:** Use a Personal Access Token instead
+  1. Go to GitHub Settings > Developer settings > Personal access tokens
+  2. Generate new token with "repo" permissions
+  3. Use token as password when prompted
+
+## Need Help?
+
+- GitHub Documentation: https://docs.github.com
+- GitHub Pages Guide: https://pages.github.com
+- Git Basics: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics
+
+## Next Steps
+
+After setup:
+1. ✅ Test your live website
+2. ✅ Add real obituary photos
+3. ✅ Update service descriptions as needed
+4. ✅ Add Google Analytics (optional)
+5. ✅ Set up custom domain (optional)
+
+---
+
+**Your website is now live and ready to serve families!**
