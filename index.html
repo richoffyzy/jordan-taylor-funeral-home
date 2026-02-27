@@ -162,7 +162,7 @@
         }
 
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--primary-navy);
             text-decoration: none;
             font-weight: 400;
             font-size: 1rem;
@@ -183,7 +183,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--text-dark);
+            color: var(--accent-gold);
         }
 
         .nav-links a:hover::after {
@@ -1485,11 +1485,11 @@
                     </svg>
                     (254) 429-5350
                 </a>
-                <a href="/cdn-cgi/l/email-protection#5b3134293f3a352f3a223734293d2e353e293a3738293e363a2f3234351b3c363a323775383436">
+                <a href="mailto:jordantaylorfuneralcremation@gmail.com">
                     <svg class="envelope-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
-                    <span class="__cf_email__" data-cfemail="771d180513161903160e1b18051102191205161b1405121a16031e181937101a161e1b5914181a">[email&#160;protected]</span>
+                    jordantaylorfuneralcremation@gmail.com
                 </a>
             </div>
             <div>Available 24 Hours a Day, 7 Days a Week</div>
@@ -1509,17 +1509,17 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#commitment">Our Commitment</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Resources ▾</a>
                     <ul class="dropdown-menu">
+                        <li><a href="#commitment">Our Commitment</a></li>
                         <li><a href="#payment">Payment Options</a></li>
                         <li><a href="Jordan_Taylor_General_Price_List.pdf" target="_blank">General Price List</a></li>
                     </ul>
                 </li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -1554,7 +1554,7 @@
                         </div>
                     </a>
                     
-                    <a href="/cdn-cgi/l/email-protection#046e6b7660656a70657d686b7662716a617665686776616965706d6b6a446369656d682a676b69" class="hero-contact-option">
+                    <a href="mailto:jordantaylorfuneralcremation@gmail.com" class="hero-contact-option">
                         <div class="hero-contact-option-icon">✉️</div>
                         <div class="hero-contact-option-details">
                             <h4>Email Us</h4>
@@ -2108,7 +2108,7 @@
                 <h3>Contact Info</h3>
                 <p>1235 Chestnut Street<br>Waco, TX 76704</p>
                 <p>(254) 429-3210<br>(254) 429-5350</p>
-                <p><a href="/cdn-cgi/l/email-protection#016b6e7365606f7560786d6e7367746f6473606d6273646c6075686e6f41666c60686d2f626e6c"><span class="__cf_email__" data-cfemail="214b4e5345404f5540584d4e5347544f4453404d4253444c4055484e4f61464c40484d0f424e4c">[email&#160;protected]</span></a></p>
+                <p><a href="mailto:jordantaylorfuneralcremation@gmail.com">jordantaylorfuneralcremation@gmail.com</a></p>
                 <p style="margin-top: 15px; color: var(--accent-gold);">Available 24/7</p>
             </div>
         </div>
@@ -2118,7 +2118,6 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
@@ -2259,7 +2258,7 @@
         });
         
         // Obituary Search and View All Functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        {
             const obituarySearch = document.getElementById('obituarySearch');
             const obituariesGrid = document.getElementById('obituariesGrid');
             const allObitCards = Array.from(document.querySelectorAll('.obituary-card'));
@@ -2346,7 +2345,7 @@
             
             // Initialize - show first 6 (most recent)
             displayCards();
-        });
+        }
         
         // Obituaries Carousel
         const obituariesGrid = document.querySelector('.obituaries-grid');
@@ -2386,3 +2385,16 @@
             obituariesGrid.addEventListener('scroll', () => {
                 const scrollPercent = obituariesGrid.scrollLeft / (obituariesGrid.scrollWidth - obituariesGrid.clientWidth);
                 const newPage = Math.round(scrollPercent * (dots.length - 1))
+                if (newPage !== currentPage) {
+                    currentPage = newPage;
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentPage);
+                    });
+                }
+            });
+        }
+
+        }); // End DOMContentLoaded
+    </script>
+</body>
+</html>
